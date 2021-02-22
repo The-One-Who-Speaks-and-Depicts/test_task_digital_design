@@ -5,6 +5,7 @@
 
 ## Installation
 * To run the application, you need to clone it from the repo to your computer with git clone:
+	git clone https://github.com/The-One-Who-Speaks-and-Depicts/test_task_digital_design.git
 	
 
 * Then, while in the application directory, run the following commands in the terminal:
