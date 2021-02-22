@@ -1,0 +1,1 @@
+SELECT * FROM `train_database`.`employee` WHERE NAME LIKE 'Р%н'
