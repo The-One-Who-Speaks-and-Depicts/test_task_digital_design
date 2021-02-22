@@ -9,7 +9,7 @@
 		git clone https://github.com/The-One-Who-Speaks-and-Depicts/test_task_digital_design.git
 	
 
-* Then, while in the application directory, run the following commands in the terminal:
+* Then, while in the LexemeCounter application directory, run the following commands in the terminal:
 
 		dotnet build
 		dotnet run
