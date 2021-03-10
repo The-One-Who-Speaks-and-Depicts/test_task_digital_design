@@ -7,6 +7,8 @@ namespace LexemeCounter
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("Enter a path to a text file:");
@@ -42,21 +44,7 @@ namespace LexemeCounter
             		}            		
             	}
             }
-            Dictionary<string, int> words_with_frequencies = new Dictionary<string, int>();
-            for (int i = 0; i < words.Count; i++)
-            {
-            	if (words_with_frequencies.ContainsKey(words[i]))
-            	{
-            		words_with_frequencies[words[i]]++;
-            	}
-            	else
-            	{
-            		words_with_frequencies[words[i]] = 1;
-            	}
-            }
-            var words_with_frequencies_list = words_with_frequencies.ToList();
-            words_with_frequencies_list.Sort((pair1, pair2) => pair1.Value.CompareTo(pair2.Value));
-            words_with_frequencies_list.Reverse();
+            Dictionary<string, int> words_with_frequencies_list = new Dictionary<string, int>();
             bool validFileNameProvided = false;
             Console.WriteLine("Insert file, where you want to save the frequencies to:");            
             while(!validFileNameProvided)
@@ -76,9 +64,9 @@ namespace LexemeCounter
 		            {
 		            	using (var writer = new StreamWriter(stream))
 		            	{
-				           	for (int i = 0; i < words_with_frequencies_list.Count; i++)
+				           	foreach (var kv in words_with_frequencies_list)
 					        {
-					          	writer.WriteLine(words_with_frequencies_list[i].Key + "\t" + words_with_frequencies_list[i].Value.ToString());
+					          	writer.WriteLine(kv.Key + "\t" + kv.Value.ToString());
 					        }
 					    }
 					}
